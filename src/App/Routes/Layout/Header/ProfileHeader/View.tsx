@@ -12,7 +12,7 @@ const ProfileHeader: FC<Props> = ({ accountAddress }) => {
   if (!accountAddress) {
     return (
       <ConnectButton theme="secondary" size="small">
-        Connect Wallet
+        Connect
       </ConnectButton>
     );
   }

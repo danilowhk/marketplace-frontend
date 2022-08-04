@@ -25,15 +25,27 @@ const ConnectButtonContainer: FC<PropsWithChildren<Props>> = ({ children, size, 
     }
   }, [account, isConnecting]);
 
-  const onConnect = useCallback(async () => {
+  const onConnectArgent = useCallback(async () => {
     setIsConnecting(true);
     await connect(new InjectedConnector({ options: { id: "argent-x" } }));
   }, [connect, isGithubRegistered]);
 
+  const onConnectBraavos = useCallback(async () => {
+    setIsConnecting(true);
+    await connect(new InjectedConnector({ options: { id: "braavos" } }));
+  }, [connect, isGithubRegistered]);
+
   return (
-    <ConnectButton onConnect={onConnect} size={size} theme={theme}>
-      {children}
-    </ConnectButton>
+    <div>
+      <ConnectButton onConnect={onConnectArgent} size={size} theme={theme}>
+        {children} ArgentX Wallet
+      </ConnectButton>
+      <div className="mt-3">
+        <ConnectButton onConnect={onConnectBraavos} size={size} theme={theme}>
+          {children} Braavos Wallet
+        </ConnectButton>
+      </div>
+    </div>
   );
 };
 
