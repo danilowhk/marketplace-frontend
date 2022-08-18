@@ -41,7 +41,7 @@ const ContributionDetailsPage: FC<Props> = ({
       </div>
       <div className="relative flex flex-col items-center px-12 max-w-screen-xl w-full">
         <a href={contribution.github_link} target="_blank">
-          <div className="mt-8 mx-12 font-alfreda text-[52px] leading-[68px] capitalize text-center">
+          <div className="mt-8 mx-4 sm:mx-12 font-alfreda text-[28px] sm:text-[52px] leading-[36px] sm:leading-[68px] capitalize text-center">
             {contribution.title}
           </div>
         </a>
@@ -51,7 +51,7 @@ const ContributionDetailsPage: FC<Props> = ({
           </Link>
           <span className="mt-5 text-light-purple/66 text-xs uppercase">Proposed by</span>
           <Link
-            className="mt-2 font-medium text-white text-[28px] leading-[34px] capitalize"
+            className="mt-2 font-medium text-white text-[21px] sm:text-[28px] leading-[24px] sm:leading-[34px] capitalize"
             to={`/projects/${contribution.project.id}`}
           >
             {contribution.project.title}
@@ -60,8 +60,8 @@ const ContributionDetailsPage: FC<Props> = ({
         <MetadataList contribution={contribution} className="mt-10 w-full" />
       </div>
 
-      <div className="mb-32 flex flex-col items-center max-w-screen-xl px-20 w-full shadow-contribution-description">
-        <div className="p-20 bg-mid-blue/30 backdrop-blur-[7px] w-full">
+      <div className="mb-3 sm:mb-32 flex flex-col items-center max-w-screen-xl px-3 sm:px-20  w-full shadow-contribution-description">
+        <div className="p-10 sm:p-20 bg-mid-blue/30 backdrop-blur-[7px] w-full">
           <ReactMarkdown linkTarget="_blank" className="markdown-body" children={contribution.description} />
         </div>
       </div>
